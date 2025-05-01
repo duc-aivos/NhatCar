@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoMart</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favico.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <style>
+        :root {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body,
+        html {
+            scroll-behavior: smooth !important;
+        }
+        
+        /* Custom CSS for image sizing */
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+        }
+        .featured-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+        }
+        .blog-img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        /* Card image for detailed vehicle view */
+        .vehicle-detail-img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body class="antialiased px-4 md:px-0">
+    <!-- HEADER with Navigation and Search -->
+    <header class="bg-white shadow">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-5 flex items-center">
+            <a href="/index.html" style="font-family: 'Nothing You Could Do', cursive;"
+                class="text-2xl font-bold text-black">AutoMart</a>
+            <nav class="hidden md:flex space-x-6 ml-10">
+                <a href="#hero" class="text-gray-700 hover:text-black">Home</a>
+                <a href="#featured" class="text-gray-700 hover:text-black">Shop</a>
+                <a href="#blog" class="text-gray-700 hover:text-black">Blog</a>
+                <a href="#about" class="text-gray-700 hover:text-black">About</a>
+                <a href="#contact" class="text-gray-700 hover:text-black">Contact</a>
+            </nav>
+            <div class="ml-auto flex items-center space-x-4">
+                <input type="text" placeholder="Search cars..." class="border rounded-md px-3 py-1 outline-none">
+                <button class="bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-4 py-2">
+                    <i class="bi bi-cart text-white"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-lg py-10 pb-20 flex flex-col md:flex-row items-center gap-10">
+            <div class="w-full md:w-1/2" data-aos="fade-right" data-aos-delay="50">
+                <!-- Using the "red bmw m 3 parked on parking lot during daytime" image -->
+                <img class="hero-img rounded-lg" src="https://images.unsplash.com/photo-1611317545869-9fc2d6b36be9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw3fHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Red BMW M3">
+            </div>
+            <div class="w-full md:w-1/2" data-aos="fade-left" data-aos-delay="200">
+                <h1 class="text-3xl font-bold lg:text-5xl pb-8">
+                    Find Your Dream Car
+                </h1>
+                <p class="text-xl pb-8">
+                    Discover a curated selection of premium vehicles. Experience quality, reliability, and style
+                    with AutoMart.
+                </p>
+                <a href="#featured"
+                    class="mb-8 inline-block text-white bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-8 py-2.5">
+                    Shop Now <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED VEHICLES SECTION -->
+    <section id="featured" class="bg-[#f9f9f9] py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <h2 class="text-3xl font-bold lg:text-5xl pb-8 text-center">Featured Vehicles</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Vehicle 1: Red BMW M3 -->
+                <div class="bg-white rounded-lg shadow overflow-hidden" data-aos="fade-up">
+                    <img class="featured-img" src="https://images.unsplash.com/photo-1611317545869-9fc2d6b36be9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw3fHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Red BMW M3">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-xl">BMW M3</h3>
+                        <p class="text-gray-600 text-sm mt-2">Experience unrivaled performance with this sporty machine.</p>
+                        <p class="mt-3 font-bold text-lg">$55,000</p>
+                    </div>
+                </div>
+                <!-- Vehicle 2: Lexus RC350 F-Sport -->
+                <div class="bg-white rounded-lg shadow overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <img class="featured-img" src="https://images.unsplash.com/photo-1598545489295-e300327e993e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw4fHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Lexus RC350 F-Sport">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-xl">Lexus RC350 F-Sport</h3>
+                        <p class="text-gray-600 text-sm mt-2">A blend of luxury and performance, designed to impress.</p>
+                        <p class="mt-3 font-bold text-lg">$60,000</p>
+                    </div>
+                </div>
+                <!-- Vehicle 3: White SUV -->
+                <div class="bg-white rounded-lg shadow overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <img class="featured-img" src="https://images.unsplash.com/photo-1529369623266-f5264b696110?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwyfHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="White SUV">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-xl">Premium SUV</h3>
+                        <p class="text-gray-600 text-sm mt-2">Spacious, safe, and stylish – perfect for families and adventures.</p>
+                        <p class="mt-3 font-bold text-lg">$45,000</p>
+                    </div>
+                </div>
+                <!-- Vehicle 4: Mercedes Benz -->
+                <div class="bg-white rounded-lg shadow overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+                    <img class="featured-img" src="https://images.unsplash.com/photo-1553196491-5e91ddfe2af0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwxMHx8Y2FyJTIwc2FsZXN8ZW58MHx8fHwxNzQ2MTEwMTY1fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Mercedes Benz">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-xl">Mercedes Benz</h3>
+                        <p class="text-gray-600 text-sm mt-2">Luxury redefined – style, comfort, and cutting edge technology.</p>
+                        <p class="mt-3 font-bold text-lg">$70,000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE AUTOMART SECTION -->
+    <section id="why" class="bg-white py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <h2 class="text-3xl font-bold lg:text-5xl pb-8 text-center">
+                Why Choose <span style="font-family: 'Nothing You Could Do', cursive;">AutoMart</span>?
+            </h2>
+            <p class="mb-16 text-xl text-center">
+                We offer a seamless car buying experience – from extensive selection to secure payment and financing options.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-gray-100 bg-black rounded-full mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path d="M2 5a2 2 0 012-2h3.28a2 2 0 011.94 1.37L10.72 7H16a2 2 0 012 2v5a2 2 0 01-2 2H4a2 2 0 01-2-2V5z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Wide Selection</h3>
+                    <p class="text-sm text-gray-500">Choose from a diverse range of new and pre-owned vehicles.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-gray-100 bg-black rounded-full mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Certified Quality</h3>
+                    <p class="text-sm text-gray-500">Every car is inspected and certified by experts.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-gray-100 bg-black rounded-full mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-4 0-6 1.5-6 3v4h12v-4c0-1.5-2-3-6-3z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Easy Financing</h3>
+                    <p class="text-sm text-gray-500">Flexible payment options that suit your budget.</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-center justify-center w-12 h-12 mb-4 text-gray-100 bg-black rounded-full mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 13l2-2 4 4 8-8 2 2" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold">Secure Payment</h3>
+                    <p class="text-sm text-gray-500">Your transactions are processed with the highest security standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PROMISE / ABOUT SECTION -->
+    <section id="about" class="bg-[#f1f1f1] py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl flex flex-col md:flex-row gap-10 items-center">
+            <div class="w-full md:w-1/3" data-aos="fade-right">
+                <!-- Using the "Tachometer" image for a symbolic representation -->
+                <img class="vehicle-detail-img rounded-lg" src="https://images.unsplash.com/photo-1498887960847-2a5e46312788?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw0fHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Tachometer">
+            </div>
+            <div class="w-full md:w-2/3" data-aos="fade-left">
+                <h2 class="text-3xl font-bold lg:text-5xl pb-8">
+                    Our Promise
+                </h2>
+                <p class="text-xl">
+                    At AutoMart, our mission is simple: to provide you with a trustworthy and streamlined car buying experience.
+                    From handpicked vehicles to transparent pricing and hassle-free financing, we are committed to exceeding your expectations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="FAQ" class="bg-white py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <div class="flex items-center justify-between">
+                <h2 class="text-3xl font-bold lg:text-5xl pb-8">
+                    <span style="font-family: 'Nothing You Could Do', cursive;">Frequently</span> Asked Questions
+                </h2>
+                <img class="w-32" src="https://images.unsplash.com/photo-1505426519484-49cb8fef3def?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwxfHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Car showcase">
+            </div>
+            <div class="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-16">
+                <div>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">What types of cars do you offer?</h5>
+                    <p>
+                        We offer a variety of vehicles – from luxury sports cars and sedans to SUVs and family vehicles – all rigorously inspected for quality.
+                    </p>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">Do you provide financing options?</h5>
+                    <p>
+                        Yes, we offer flexible financing plans in collaboration with top financial institutions. We make it simple for you to choose the best plan.
+                    </p>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">Are the cars certified?</h5>
+                    <p>
+                        Absolutely! Each vehicle undergoes a comprehensive inspection and certification process before being listed.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">Can I test drive a vehicle?</h5>
+                    <p>
+                        Yes. Once you choose a car, you can schedule a test drive at one of our partner locations for a fully guided experience.
+                    </p>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">What is your return policy?</h5>
+                    <p>
+                        We offer a 7-day return policy for vehicles not meeting your expectations. Please review our terms for full details.
+                    </p>
+                    <h5 class="mt-5 mb-3 font-semibold text-gray-900">How do I contact customer support?</h5>
+                    <p>
+                        Reach out to us via email at support@automart.com or use our live chat available on the website.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="bg-[#f1f1f1] py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <h2 class="text-3xl font-bold lg:text-5xl pb-8 text-center">
+                <span style="font-family: 'Nothing You Could Do', cursive;">Testimonials</span>
+            </h2>
+            <div class="swiper">
+                <div class="swiper-wrapper items-center flex flex-row">
+                    <div class="swiper-slide" data-aos="fade-up">
+                        <div class="flex flex-col gap-8">
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600 ">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    AutoMart made buying my first car an absolute pleasure—transparent, hassle-free, and genuinely enjoyable.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="profile" src="./imgs/LB_arrondi.png" class="mx-auto object-cover rounded-full h-10 w-10">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">John Doe</span>
+                                        <span class="flex items-center text-xs">Happy Customer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600 ">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    The financing options were tailored to my needs. I highly recommend AutoMart for its professionalism.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="profile" src="./imgs/LB_arrondi.png" class="mx-auto object-cover rounded-full h-10 w-10">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Jane Smith</span>
+                                        <span class="flex items-center text-xs">Satisfied Buyer</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex flex-col gap-8">
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600 ">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    From an extensive inventory to secure payment options—AutoMart exceeded my expectations.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="profile" src="./imgs/LB_arrondi.png" class="mx-auto object-cover rounded-full h-10 w-10">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Alex Johnson</span>
+                                        <span class="flex items-center text-xs">Long-time Client</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gradient-to-b from-slate-50 to-slate-100 w-72 shadow-lg mx-auto rounded-xl p-4">
+                                <p class="text-gray-600 ">
+                                    <span class="text-lg font-bold text-slate-800">“</span>
+                                    A truly customer-centric experience. The staff ensured every question was answered.
+                                    <span class="text-lg font-bold text-slate-800">”</span>
+                                </p>
+                                <div class="flex items-center mt-4">
+                                    <a href="#" class="relative block">
+                                        <img alt="profile" src="./imgs/LB_arrondi.png" class="mx-auto object-cover rounded-full h-10 w-10">
+                                    </a>
+                                    <div class="flex flex-col justify-between ml-2">
+                                        <span class="text-sm font-semibold text-slate-800">Emily Davis</span>
+                                        <span class="flex items-center text-xs">Car Enthusiast</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Additional swiper slides can be added as needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section id="blog" class="bg-white py-20">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl">
+            <h2 class="text-3xl font-bold lg:text-5xl pb-8 text-center">
+                Car Tips & News
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-[#f1f1f1] rounded-xl overflow-hidden shadow" data-aos="fade-up">
+                    <img class="blog-img" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHwzfHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Car Buying Tips">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold">Top 10 Car Buying Tips</h3>
+                        <p class="text-gray-600 mt-3">Learn how to choose the perfect car, negotiate prices, and secure financing in our comprehensive guide.</p>
+                        <a href="#" class="inline-block mt-4 text-white bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-6 py-2">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-[#f1f1f1] rounded-xl overflow-hidden shadow" data-aos="fade-up" data-aos-delay="100">
+                    <img class="blog-img" src="https://images.unsplash.com/photo-1598859159221-1fffc50b4932?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3MzQ0MzV8MHwxfHNlYXJjaHw2fHxjYXIlMjBzYWxlc3xlbnwwfHx8fDE3NDYxMTAxNjV8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Latest Car Trends">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold">Latest Trends in Auto Technology</h3>
+                        <p class="text-gray-600 mt-3">Stay updated on advanced safety features, electric vehicles, and smart tech revolutionizing the automotive world.</p>
+                        <a href="#" class="inline-block mt-4 text-white bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-6 py-2">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-[#f1f1f1]">
+        <div class="mx-auto sm:px-7 px-4 max-w-screen-xl py-10">
+            <div class="flex items-center flex-col md:flex-row">
+                <p class="mb-8 text-sm text-center text-gray-700 md:text-left md:mb-0">
+                    © Copyright 2023 AutoMart. All Rights Reserved.
+                </p>
+                <div class="mt-4 md:mt-0 md:ml-auto">
+                    <a href="#" class="mx-2 text-gray-700 hover:underline">Privacy Policy</a>
+                    <a href="#" class="mx-2 text-gray-700 hover:underline">Terms of Service</a>
+                    <a href="#" class="mx-2 text-gray-700 hover:underline">Contact Us</a>
+                </div>
+                <button class="ml-auto bg-black rounded-lg hover:bg-black/80 duration-300 transition-colors border border-transparent px-8 py-2.5">
+                    <svg class="w-5 h-5 sm:h-6 sm:w-6" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M20.8426 17.1449C20.5099 17.9135 20.1161 18.6211 19.6598 19.2715C19.0378 20.1583 18.5286 20.7721 18.1361 21.113C17.5277 21.6724 16.8759 21.959 16.1779 21.9753C15.6768 21.9753 15.0725 21.8327 14.3691 21.5434C13.6633 21.2555 13.0148 21.113 12.4217 21.113C11.7998 21.113 11.1327 21.2555 10.4193 21.5434C9.70469 21.8327 9.12904 21.9834 8.68892 21.9984C8.01957 22.0269 7.35239 21.7322 6.68644 21.113C6.26139 20.7422 5.72974 20.1067 5.09285 19.2063C4.40951 18.2449 3.84772 17.13 3.4076 15.8589C2.93624 14.486 2.69995 13.1565 2.69995 11.8694C2.69995 10.3951 3.01853 9.12345 3.65665 8.05784C4.15815 7.20191 4.82533 6.52672 5.66035 6.03105C6.49537 5.53539 7.39761 5.2828 8.36925 5.26664C8.9009 5.26664 9.59809 5.43109 10.4645 5.75429C11.3284 6.07858 11.8832 6.24303 12.1264 6.24303C12.3082 6.24303 12.9245 6.05074 13.9692 5.66738C14.9571 5.31186 15.7909 5.16466 16.474 5.22264C18.3249 5.37202 19.7155 6.10167 20.6402 7.41619C18.9849 8.4192 18.166 9.82403 18.1823 11.6262C18.1972 13.03 18.7065 14.1981 19.7073 15.1256C20.1609 15.5561 20.6674 15.8888 21.231 16.1251C21.1087 16.4795 20.9797 16.819 20.8426 17.1449ZM16.5975 0.440369C16.5975 1.54062 16.1956 2.56792 15.3944 3.51878C14.4275 4.64917 13.258 5.30236 11.9898 5.19929C11.9736 5.06729 11.9642 4.92837 11.9642 4.78239C11.9642 3.72615 12.424 2.59576 13.2406 1.67152C13.6483 1.20356 14.1667 0.814453 14.7955 0.504058C15.4229 0.198295 16.0163 0.0292007 16.5744 0.000244141C16.5907 0.147331 16.5975 0.294426 16.5975 0.440355V0.440369Z"
+                            fill="white" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 5000
+            },
+            freeMode: true,
+            breakpoints: {
+                1320: {
+                    slidesPerView: 4
+                },
+                1000: {
+                    slidesPerView: 3
+                },
+                700: {
+                    slidesPerView: 2
+                },
+                100: {
+                    slidesPerView: 1
+                }
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
